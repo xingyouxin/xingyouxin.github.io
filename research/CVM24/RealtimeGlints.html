@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>A Tiny Example-Based Procedural Model for Real-Time Glinty Appearance Rendering</title>
+
+<meta name="description" content="A Tiny Example-Based Procedural Model for Real-Time Glinty Appearance Rendering">
+<meta name="keywords" content="real-time, reflectance modeling, glinty materials, rendering">
+<link rel="stylesheet" type="text/css" href="./RealtimeGlints_files/style.css">
+</head>
+<body>
+<section>
+
+<center>
+<h1>
+<center>
+A Tiny Example-Based Procedural Model for Real-Time Glinty Appearance Rendering
+</center>
+</h1>
+<i>Youxin Xing, Haowen Tan, Yanning Xu, Lu Wang</i>
+<br><b>CVM 2024 (JCST, to appear)</b>
+<br><br></center>
+
+<center>
+<img alt="GI" src="./RealtimeGlints_files/RealtimeGlints.png" style="width:900px">
+<br>
+<i>  The comparison of our method with other microstructure rendering methods on the Coffee machine scene containing four types of microstructure, including (a) brushed metal, (b) scratch, (c) structured materials, and (d) isotropic noise. Compared to these methods, our method is faster and significantly reduces memory overhead while rendering visually identical results..</i>
+</center>
+
+<h1>Abstract</h1>
+<p>
+  The glinty details from complex microstructures significantly enhance rendering realism. However, the previous methods use high-resolution normal maps to define each micro-geometry, which requires huge memory overhead. This paper observes that many self-similarity materials have independent structural characteristics, which we define as tiny example microstructures. We propose a procedural model to represent microstructures implicitly by performing spatial transformations and spatial distribution on tiny examples. Furthermore, we precompute normal distribution functions (NDFs) by 4D Gaussians for tiny examples and store them in multi-scale NDF maps. Combined with a tiny example-based NDF evaluation method, complex glinty surfaces can be rendered simply by texture sampling. The experiment shows that our tiny example-based microstructure rendering method is GPU-friendly, successfully reproducing high-frequency reflection features of different microstructures in real-time with low memory and computational overhead.
+</p>
+<!--
+<h1>Video</h1>
+<p>
+</p><center>
+<iframe width="840" height="630" src="./MBBRDF_files/IoiI9EIwjQI.html" frameborder="0" allowfullscreen=""></iframe>
+</center>
+<p></p> -->
+
+<h1>Downloads</h1>
+<p>
+<a href="https://xingyouxin.github.io/research/CVM24/RealtimeGlints_files/paper_RealtimeGlints.pdf"><img alt="PDF format" src="./RealtimeGI_files/paper-logo.png"></a>
+<a href="https://xingyouxin.github.io/research/CVM23/RealtimeGlints_files/video_RealtimeGlints.mp4"><img alt="Video" src="./RealtimeGI_files/video-logo.png"></a>
+</p>
+
+
+<h1>BibTex</h1>
+<p>
+</p><pre>@article{Xing:2024:RealtimeGlints,
+  author = {Youxin Xing, Haowen Tan, Yanning Xu, Lu Wang},
+  title = {A Tiny Example-Based Procedural Model for Real-Time Glinty Appearance Rendering},
+  journal ={Journal of Computer Science and Technology},
+  year = {2024},
+}
+</pre> 
+<p></p>
+
+<p><a href="https://xingyouxin.github.io/" target="_blank" rel="noopener"> Back to Homepage</a></p>
+</section>
+
+
+<div class="xl-chrome-ext-bar" id="xl_chrome_ext_{4DB361DE-01F7-4376-B494-639E489D19ED}" style="display: none;">
+      <div class="xl-chrome-ext-bar__logo"></div>
+
+      <a id="xl_chrome_ext_download" href="javascript:;" class="xl-chrome-ext-bar__option">&#19979;&#36733;&#35270;&#39057;</a>
+      <a id="xl_chrome_ext_close" href="javascript:;" class="xl-chrome-ext-bar__close"></a>
+    </div></body></html>
