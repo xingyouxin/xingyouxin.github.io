@@ -175,6 +175,10 @@ hr.sep{
 }
 
 body{
+  margin-top:20px;
+  margin-bottom:8px;
+  margin-right:370px;
+  margin-left:370px;
 
   -webkit-text-size-adjust: 100% ;
   font-size: 15px;
@@ -227,6 +231,10 @@ body{
 #main{
     width:1000px;
     margin: 0 auto;
+    /* margin-top:auto; */
+	/* margin-bottom:auto; */
+	/* margin-right:auto; */
+	/* margin-left:0%; */
     background: rgb(254,252,253); /* Old browsers */
     /*background: -webkit-linear-gradient(90deg,  rgb(254,252,253) 99%,rgb(245,245,245) 100%);*/
     padding-left: 4%;
