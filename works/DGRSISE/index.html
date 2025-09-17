@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>SVBRDF</title>
+
+    <meta name="description" content="Diffusion-Guided Relighting for Single-Image SVBRDF Estimation">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="js/app.js"></script>
+	
+	
+	<link rel="stylesheet" href="css/dics.min.css">
+    <script src="scripts/dics.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', domReady);
+        function domReady() {
+            for (const e of document.querySelectorAll(".b-dics")) {
+                new Dics({
+                    container: e,
+                    textPosition: "top"
+                });
+            }
+        }
+    </script>
+	
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                Diffusion-Guided Relighting for Single-Image SVBRDF Estimation
+                <br>
+                <small>
+                    Proceedings of SIGGRAPH Asia 2025
+                </small>
+            </h2>
+        </div>
+		
+		<div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://xingyouxin.github.io/">
+                          Youxin Xing
+                        </a>
+                        <br> Shandong University<br>
+                    </li>
+					<li>
+                        <a href="https://zheng95z.github.io/">
+                          Zheng Zeng
+                        </a>
+                        <br> University of California, Santa Barbara<br>
+                    </li>
+					<li>
+                        <a href="https://icewired-yy.github.io/">
+                          Youyang Du
+                        </a>
+                        <br> Shandong University<br>
+                    </li>
+                    <li>
+                        <a href="https://wanglusdu.github.io/">
+                          Lu Wang&#10013
+                        </a>
+                        <br> Shandong University<br>
+                    </li>
+                    <li>
+                        <a href="https://wangningbei.github.io/">
+                          Beibei Wang&#10013
+                        </a>
+                        <br> Nanjing University<br>
+                    </li><br>
+                </ul>
+            </div>
+        </div>
+		
+		<div class="row">
+            <div class="col-md-12 text-center">
+                &#10013Corresponding author
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+							<a href=https://xingyouxin.github.io/works/DGRSISE/paper/SigA-2025.pdf target="_blank">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            	<a href="https://github.com/xingyouxin/DGRSISE" target="_blank">
+                                <h4><strong>Codes</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Abstract
+                </h3>
+                <image src="imgs/Teaser.jpg" style="width:100%;" class="img-responsive center-block" alt="overview"></image>
+                <br>
+                <p class="text-justify">
+                    Recovering high-fidelity spatially varying bidirectional reflectance distribution function (SVBRDF) maps from a single image remains an ill-posed and challenging problem, especially in the presence of saturated highlights. Existing methods often fail to reconstruct the underlying texture in regions overwhelmed by intense specular reflections. This kind of bake-in artifacts caused by highlight corruption can be greatly alleviated by providing a series of material images under different lighting conditions. To this end, our key insight is to leverage the strong priors of diffusion models to generate images of the same material under varying lighting conditions. These generated images are then used to aid a multi-image SVBRDF estimator in recovering highlight-free reflectance maps. However, strong highlights in the input image lead to inconsistencies across the relighting results. Moreover, texture reconstruction becomes unstable in saturated regions, with variations in background structure, specular shape, and overall material color. These artifacts degrade the quality of SVBRDF recovery. To address this issue, we propose a shuffle-based background consistency module that extracts stable background features and implicitly identifies saturated regions. This guides the diffusion model to generate coherent content while preserving material structures and details. Furthermore, to stabilize the appearance of generated highlights, we introduce a lightweight specular prior encoder that estimates highlight features and then performs grid-based latent feature translation, injecting consistent specular contour priors while preserving material color fidelity. Both quantitative analysis and qualitative visualization demonstrate that our method enables stable neural relighting from a single image and can be seamlessly integrated into multi-input SVBRDF networks to estimate highlight-free reflectance maps.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Pipeline
+                </h3>
+                <image src="imgs/Overall pipeline.jpg" style="width:100%;" class="img-responsive center-block" alt="overview"></image>
+                <br>
+                <p class="text-justify">
+                    Overview of our training and inference pipeline. <b>Training:</b> Given a batch of input images, we extract stable background features using the proposed (b) shuffle-based background consistency module (Section 4.1). In parallel, we use (c) a specular prior reuse strategy to translate highlight features 𝑙<sub>0</sub> (encoded from the input 𝐼<sub>0</sub>) to novel lighting positions (Section 4.2). These two types of features are fused via a channel attention mechanism (AFS [Guo et al. 2021]) and injected into ControlNet [Zhang et al. 2023], providing structured and disentangled guidance for diffusion-based generation. Additionally, explicit information about the light vector, view vector, and their half vector is embedded into the cross-attention layers of the diffusion model using (d) an IP-Adapter mechanism [Ye et al. 2023], enabling precise and controllable illumination conditioning. <b>Inference:</b> Our method starts from a single input image 𝐼. Under different light and view positions, we use (a) a consistency material encoder without feature shuffle to extract features. These features guide the diffusion model to generate diverse neural material relighting results. By integrating with (e) a multi-input SVBRDF estimator [Luo et al. 2024b], it enables the reconstruction of high-quality SVBRDF maps.
+                </p>
+                <image src="imgs/SBCM.jpg" style="width:100%;" class="img-responsive center-block" alt="overview"></image>
+                <br>
+                <p class="text-justify">           
+                    Architecture of our proposed shuffle-based background consistency module. This figure illustrates the full pipeline for extracting stable background features (left), which consists of the HA-Branch and MD-Branch. It also depicts the intra-batch shuffling process used during training only to improve learning capacity and enforce consistency across features extracted from different lighting conditions (middle). The right part shows the details of the MD convolution. Here, ⊗ denotes element-wise multiplication. IN indicates instance normalization. X<sup>𝑙</sup> , X<sup>𝑙 +1</sup> represent the input and output of the 𝑙-th layer, respectively.
+                </p>
+            </div>
+        </div>
+
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h3>
+                Comparison on Neural Material Relighting
+            </h3>
+            <image src="imgs/Neural relighting comparison-all.jpg" style="width:100%;" class="img-responsive center-block" alt="overview"></image>
+            <br>
+            <p class="text-justify">
+                Visual comparison of neural material relighting on real and synthetic datasets. We compare our method against Bieron et al. [2023] under the consistent view/lighting settings during training. For synthetic data, LPIPS scores are reported below each image, with the lowest values highlighted in bold.            
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h3>
+                Improvements in Single-Image SVBRDF Recovery
+            </h3>
+            <image src="imgs/Svbrdf and rerendering comparison-luo.jpg" style="width:100%;" class="img-responsive center-block" alt="overview"></image>
+            <br>
+            <p class="text-justify">
+                Visual comparison of SVBRDFs and re-rendered results between our method, MatFusion (Sartor and Peers [2023]), and LGD (Luo et al. [2024a]) on real captured data. Our method effectively avoids specular bake-in artifacts in the SVBRDFs and produces clean renderings under novel lighting conditions.
+            </p>
+            <image src="imgs/Svbrdf and rerendering comparison-all.jpg" style="width:100%;" class="img-responsive center-block" alt="overview"></image>
+            <br>
+            <p class="text-justify">
+                Visual comparison of SVBRDFs and re-rendered results on real and synthetic datasets. We compare our method with Bieron et al. [2023] under the consistent view/lighting settings during training. For synthetic data, LPIPS scores are reported below each image, with the lowest and second lowest values highlighted in bold and underlined.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h3>
+                Ablation Study
+            </h3>
+            <image src="imgs/Ablation.jpg" style="width:60%;" class="img-responsive center-block" alt="overview"></image>
+            <br>
+            <p class="text-justify">
+                Visual comparison of our full method and ablated variants for neural relighting.
+            </p>
+        </div>
+    </div>
+
+    
+
+
+    <!-- <div class="row comp-margin">
+        <div class="col-md-10 col-md-offset-1">
+            <h3>
+                Other Results
+            </h3>
+        </div>
+    </div> -->
+
+    <!-- <div class="row">
+        <div class="col-md-10 col-md-offset-1 text-center">
+            <ul class="nav nav-pills nav-justified">
+                <li>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/LJKw1wL-mdE?si=gVmN0W1OVVN-lfCi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </li>
+                <br>
+            </ul>
+        </div>
+    </div> -->
+    <br>
+
+    <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h3>
+            Citation
+        </h3>
+        <div class="form-group col-md-10">
+            <textarea id="bibtex" class="form-control" readonly>
+@inproceedings{Xing:2025:Diffusion-Guided,
+  title={Diffusion-Guided Relighting for Single-Image SVBRDF Estimation},
+  author={Youxin Xing and Zheng Zeng and Youyang Du and Lu Wang and Beibei Wang},
+  booktitle={Proceedings of SIGGRAPH Asia 2025},
+  year={2025},
+}
+</textarea>
+        </div>
+    </div>
+</div>	    
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                The website template was borrowed from <a href="https://bakedsdf.github.io/">BakedSDF</a>.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
